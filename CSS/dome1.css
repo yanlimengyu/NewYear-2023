@@ -1,0 +1,479 @@
+/* 去除页面边距与填充 */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* 填充整个页面的盒子 */
+.t1{
+    background-color: #ebebeb;
+    width: 1536px;
+    height: 713px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 中间大圆盒子的样式*/
+.round{
+    width: 560px;
+    height: 560px;
+    border-radius: 560px;
+    box-shadow: 20px 20px 20px 1px rgba(0, 0, 0, 0.1),
+                -20px -20px 20px 1px rgba(255, 255, 255, 0.7),
+                inset 8px 8px 10px 0px rgba(0, 0, 0, 0.1),
+                inset -8px -8px 10px 0px rgba(255, 255, 255, 0.8);
+    position: relative;
+    transition: all 1s ease-out;
+}
+
+/* 装载登录东西的盒子 */
+.Login_box{
+    width: 560px;
+    height: 560px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transition: all 1s ease-out;
+}
+
+/* 背景图片为头像的盒子 */
+.HP_box{
+    width: 90px;
+    height: 90px;
+    border-radius: 90px;
+    background-image: url(../img/QQ.png);
+    background-size: 90px;
+    box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 表单盒子装载输入框与确认按钮 */
+#FM{
+    height: 200px;
+    margin-top: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content:space-between;
+}
+
+/* 输入框样式 */
+#ACC{
+    width: 400px;
+    height: 80px;
+    background-color: #ebebeb;
+    border: none;
+    box-shadow: inset -4px -4px 4px 0px rgba(255, 255, 255, 1),inset 4px 4px 4px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 80px;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* 输入框获取焦点时样式：去除黑色边框 */
+#ACC:focus{
+    outline:none;
+}
+
+/* 确认按钮样式 */
+#SUB{
+    width: 65px;
+    height: 65px;
+    border: none;
+    opacity:0;
+}
+
+/* 确认按钮表面对勾左盒子样式 */
+#SUB_icon_left{
+    width: 5px;
+    height: 0px;
+    background-color: #05df00;
+    border-radius: 5px;
+    transition: all 0.5s ease-out;
+}
+
+/* 确认按钮表面对勾右盒子样式 */
+#SUB_icon_right{
+    width: 0px;
+    height: 5px;
+    background-color: #05df00;
+    position: relative;
+    top: -5px;
+    border-radius: 0px 5px 5px 5px;
+    transition: all 0.5s ease-out 0.5s;
+}
+
+/* 确认按钮表面对勾盒子样式 */
+#SUB_icon_box{
+    width: 50px;
+    height: 25px;
+    background-color: #ebebeb;
+    opacity: 0.5;
+    position: absolute;
+    left: 750px;
+    top: 462px;
+    transform: rotate(-45deg);
+}
+
+/* 头像里三个大盒子样式 */
+.HPinbox{
+    width: 90px;
+    height: 90px;
+    border-radius: 90px;
+    position: absolute;
+    top: 90px;
+    transform-origin: 45px 0px;
+    background-color: #ebebeb;
+    border: 1px solid #fff;
+    transition: all 1s ease-out;
+    overflow: hidden;
+}
+
+/* 头像里三个大盒子不同渐变色 */
+#x-1{
+    background:linear-gradient(to left,#0cebeb,#20e3b2);
+}
+
+#x-2{
+    background:linear-gradient(to left,#20e3b2,#29ffc6);
+}
+
+#x-3{
+    background:linear-gradient(to left,#29ffc6,#0cebeb);
+}
+
+
+/* 三个大盒子里十二个小盒子的样式 */
+.xbox{
+    width: 90px;
+    height: 90px;
+    border-radius: 90px;
+    transform-origin: 45px 0px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+    position: absolute;
+}
+
+.in1{
+    transform: rotate(60deg);
+}
+
+.in2{
+    transform: rotate(120deg);
+}
+
+.in3{
+    transform: rotate(240deg);
+}
+
+.in4{
+    transform: rotate(300deg);
+}
+
+
+
+/* 眨眼动画 */
+
+@keyframes blink{
+    0%{
+        height:80px;
+    }
+
+    10%{
+        height: 0px;
+    }
+
+    20%{
+        height:80px;
+    }
+
+    30%{
+        height: 0px;
+    }
+
+    40%{
+        height: 80px;
+    }
+}
+
+/* 邮件漂浮动画 */
+@keyframes flutter{
+    0%{
+        transform: translateY(0px);
+    }
+
+    100%{
+        transform: translateY(20px);
+        /* background-color: #bd1e1e; */
+    }
+}
+
+/* 大白盒子样式 */
+.page_2{
+    width: 560px;
+    height: 560px;
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 装载眼睛的盒子 */
+#eyesbox{
+    width: 400px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* 两个眼睛的样式 */
+.eyes{
+    width: 80px;
+    height: 0px;
+    border-radius: 80px;
+    background-color: #000;
+    transition: all 0.5s ease-out;
+}
+
+/* 左眼右边距拉开距离 */
+#eyes_left{
+    margin-right: 240px;
+}
+
+/* 眼睛中间的杠 */
+#bar{
+    width: 0px;
+    height: 10px;
+    background-color: #000;
+    transition: all 1s ease-out;
+    border-radius: 5px;
+    position: absolute;
+}
+
+/* 消息盒子样式 */
+#message{
+    width: 300px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 50px;
+    position: absolute;
+    left: 1048px;
+    top: 77px;
+    transition: all 1s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-family: "黑体";
+}
+
+/* 邮件盒子样式 */
+#mailbox{
+    width: 200px;
+    height: 120px;
+    border-radius: 20px;
+    background-color: #f84444;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 1231px;
+    top: 525px;
+    transition: all 1s ease-out;
+    animation: flutter 1s ease-in-out 0s infinite alternate;
+}
+
+
+/* 邮件内大白盒子样式 */
+#whitebox{
+    width: 150px;
+    height: 58px;
+    border-radius: 58px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in;
+}
+
+/* 邮件内眼睛的样式 */
+.smalleyes{
+    width: 22px;
+    height: 22px;
+    border-radius: 22px;
+    background-color: #000;
+    transition: all 1s ease-out;
+}
+
+/* 邮件内杠的样式 */
+#smallbar{
+    width: 85px;
+    height: 3px;
+    background-color: #000;
+    transition: all 1s ease-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#whitebox_2{
+    width: 1400px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 30px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#left{
+    width: 39%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+#demarcation{
+    width: 10px;
+    height: 0px;
+    background-color: #000;
+    border-radius: 10px;
+    transition: all 1s ease-out;
+}
+
+#right{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+
+#baymax{
+    width: 450px;
+    height: 316px;
+    background-image: url(../img/baymax.png);
+    background-size: 450px 316px;
+}
+
+#stamp{
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    background-color: #f84444;
+    display: flex;
+    justify-content: center;
+    margin-top: 43px;
+}
+
+#smallwhitebox{
+    width: 150px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 58px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.smalleyes_2{
+    width: 22px;
+    height: 22px;
+    border-radius: 22px;
+    background-color: #000;
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+#smallbar_2{
+    width: 85px;
+    height: 3px;
+    background-color: #000;
+    z-index: 1;
+}
+
+#title{
+    justify-content: center;
+    border: none;
+    font-size: 35px;
+}
+
+p{
+    width: 600px;
+    height: 70px;
+    border-bottom: 2px solid #000;
+    display: flex;
+    align-items: flex-end;
+}
+
+@keyframes rot{
+    0%{
+        transform: rotate(0deg);
+    }
+    
+    25%{
+        transform: rotate(90deg);
+    }
+
+    50%{
+        transform: rotate(180deg);
+    }
+
+    75%{
+        transform: rotate(270deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+#backbox1{
+    width: 0px;
+    height: 0px;
+
+    position: absolute;
+    top: 25px;
+    left: 75px;
+    animation: rot 2s linear 0s infinite ;
+    z-index: 0;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+#phone{
+    display: none;
+    flex-flow: column nowrap;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-size: 20px;
+}
